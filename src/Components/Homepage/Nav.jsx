@@ -16,15 +16,18 @@ export const Nav = () => {
   if (loading) {
     return <p>Loading...</p>;
   }
-  /* 
-  const [topics, setTopics] = useState([]); */
-  /* useEffect to getTopics and set
-  default to all topics */
 
-  return (
+    return (
     <>
-    <h2>Articles</h2>
+      <h2>Articles</h2>
       <ArticleList articles={articles} /* topic={topic} */ />
     </>
   );
 };
+
+/* IGNORE below--> */
+/* 
+  const [topics, setTopics] = useState([]); 
+  useEffect to getTopics and set
+  default to all topics 
+  SEE Stephens msg on pull request when get to topics!!!! */
