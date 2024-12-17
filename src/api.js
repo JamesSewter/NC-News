@@ -9,3 +9,10 @@ export const getArticles = () => {
         return data.articles
     })
 }
+
+export const getArticle = (article_id) => {
+    return api.get(`/article/${article_id}`).then(({data}) => {
+        return data.article
+    })
+}
+
