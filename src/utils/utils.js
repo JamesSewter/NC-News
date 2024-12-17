@@ -1,5 +1,3 @@
-//make date readable
-//Capitalise topic
 
 export const convertDate = (date) => {
   const [year, month, day] = date.slice(0, 10).split("-");
@@ -32,10 +30,10 @@ export const convertDate = (date) => {
   return formattedDate;
 };
 
-export const convertTopic = (topic) => {
-  const topicName = topic.split("");
-  topicName[0] = topicName[0].toUpperCase();
-  return topicName.join("");
+export const capitaliseFirstLetter = (word) => {
+  const capitalisedWord = word.split("");
+  capitalisedWord[0] = capitalisedWord[0].toUpperCase();
+  return capitalisedWord.join("");
 };
 
 export const addEmoji = (votes) => {
@@ -44,5 +42,20 @@ export const addEmoji = (votes) => {
   } else {
     const formatVotes = votes.toString().slice(1);
     return `👎${formatVotes}`;
+  }
+};
+
+export const addAdjective = (articleVotes) => {
+  if (articleVotes > 0 && articleVotes !== 1) {
+    return "upvotes - what a great article. More like this below.";
+  } else if (articleVotes <= -2) {
+    return "downvotes - oh no!";
+  }
+  else if (articleVotes === 0) {
+    return "upvotes - it divides opinion!";
+  } else if (articleVotes === 1) {
+    return "upvote - must be worth reading";
+  } else {
+    return "downvote - oh no!";
   }
 };

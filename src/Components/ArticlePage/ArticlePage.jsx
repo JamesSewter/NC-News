@@ -8,7 +8,7 @@ import { Suggested } from "./Suggested";
 export const ArticlePage = () => {
   const [article, setArticle] = useState({});
   const { article_id } = useParams();
-  //loading and errors
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -25,8 +25,8 @@ export const ArticlePage = () => {
   return (
     <div>
       <Article article={article} />
-      <Comments />
       <Suggested />
+      <Comments />
     </div>
   );
 };

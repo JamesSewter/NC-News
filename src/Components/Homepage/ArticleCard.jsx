@@ -1,4 +1,4 @@
-import { convertTopic, convertDate } from "../../utils/utils";
+import { capitaliseFirstLetter, convertDate } from "../../utils/utils";
 
 export const ArticleCard = ({ article }) => {
   const {
@@ -11,11 +11,11 @@ export const ArticleCard = ({ article }) => {
     votes,
     comment_count,
   } = article;
-  const topicName = convertTopic(topic);
+  const topicName = capitaliseFirstLetter(topic);
   const date = convertDate(created_at);
 
   return (
-    <div className="article-card">
+    <article className="article-card">
       <h2>{title}</h2>
       <h3>
         Topic: <b>{topicName}</b>
@@ -31,7 +31,7 @@ export const ArticleCard = ({ article }) => {
       </h3>
       <p>Votes: {votes} </p>
       <p>Comments: {comment_count}</p>
-    </div>
+    </article>
   );
 };
 
