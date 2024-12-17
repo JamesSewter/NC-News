@@ -83,3 +83,32 @@ ul {
   margin: 10px auto;
   text-align: center;
 }
+
+/* Comments */
+
+.comments {
+  border: 1px solid black;
+  padding: 10px;
+  width: 95%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+/* Comment Card */
+
+.comment-card {
+  border: 1px solid black;
+  padding: 30px;
+  width: 95%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.comment-body {
+  text-align: justify;
+}
+
+#comment-button {
+  padding: 15px;
+  margin: 15px
+}
