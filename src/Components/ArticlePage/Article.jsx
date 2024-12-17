@@ -1,7 +1,6 @@
 import { convertTopic, convertDate } from "../../utils/utils";
 
 export const Article = ({ article }) => {
-  console.log(article.title);
   const { title, topic, author, body, created_at, votes, article_img_url } =
     article;
 

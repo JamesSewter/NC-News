@@ -37,3 +37,12 @@ export const convertTopic = (topic) => {
   topicName[0] = topicName[0].toUpperCase();
   return topicName.join("");
 };
+
+export const addEmoji = (votes) => {
+  if (votes >= 0) {
+    return `👍${votes}`;
+  } else {
+    const formatVotes = votes.toString().slice(1);
+    return `👎${formatVotes}`;
+  }
+};
