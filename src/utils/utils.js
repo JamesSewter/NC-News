@@ -1,5 +1,8 @@
-
 export const convertDate = (date) => {
+  if (!date || typeof date !== "string") {
+    console.log("invalid date");
+  }
+
   const [year, month, day] = date.slice(0, 10).split("-");
 
   const numericDay = parseInt(day);
@@ -45,13 +48,12 @@ export const addEmoji = (votes) => {
   }
 };
 
-export const addAdjective = (articleVotes) => {
+export const addVoteAdjective = (articleVotes) => {
   if (articleVotes > 0 && articleVotes !== 1) {
     return "upvotes - what a great article. More like this below.";
   } else if (articleVotes <= -2) {
     return "downvotes - oh no!";
-  }
-  else if (articleVotes === 0) {
+  } else if (articleVotes === 0) {
     return "upvotes - it divides opinion!";
   } else if (articleVotes === 1) {
     return "upvote - must be worth reading";

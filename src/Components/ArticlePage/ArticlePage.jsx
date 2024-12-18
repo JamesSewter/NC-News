@@ -26,7 +26,7 @@ export const ArticlePage = () => {
     <div>
       <Article article={article} />
       <Suggested />
-      <Comments />
+      <Comments key={article_id}/>
     </div>
   );
 };

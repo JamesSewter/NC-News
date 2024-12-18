@@ -94,6 +94,26 @@ ul {
   text-align: center;
 }
 
+/* finish styling the form */
+.comment-form {
+  border: 1px solid black;
+  padding: 10px;
+  width: 95%;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#comment-prompt {
+  margin-bottom: 10px
+}
+
+#comment-input {
+  margin: 10px;
+  padding: 10px;
+
+}
+
 /* Comment Card */
 
 .comment-card {
@@ -110,5 +130,5 @@ ul {
 
 #comment-button {
   padding: 15px;
-  margin: 15px
+  margin: 15px;
 }
