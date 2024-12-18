@@ -1,4 +1,8 @@
-import { capitaliseFirstLetter, convertDate, addAdjective } from "../../utils/utils";
+import {
+  capitaliseFirstLetter,
+  convertDate,
+  addVoteAdjective,
+} from "../../utils/utils";
 import { useState } from "react";
 import { updateArticleVotes } from "../../api";
 
@@ -25,23 +29,24 @@ export const Article = ({ article }) => {
     });
     setError(null);
     updateArticleVotes(article_id, 1).catch((err) => {
-      setLikesCount((currentLikesCount) => currentLikesCount - 1);
+      console.log(err)
       setError("Your upvote was not successful. Please try again!");
     });
   };
+
   const handleDownvote = () => {
     setVotesAdded((currVotes) => {
       return currVotes - 1;
     });
     setError(null);
     updateArticleVotes(article_id, -1).catch((err) => {
-      setLikesCount((currentLikesCount) => currentLikesCount - 1);
+      console.log(err)
       setError("Your downvote was not successful. Please try again!");
     });
   };
 
   const totalVotes = votes + votesAdded;
-  const readerInfo = addAdjective(totalVotes);
+  const readerInfo = addVoteAdjective(totalVotes);
 
   return (
     <>
@@ -56,16 +61,22 @@ export const Article = ({ article }) => {
         <h2 className="repeated-article-title">{title}:</h2>
         <p className="article-body">{body}</p>
       </article>
+
       <article className="votes">
-        <h3>Votes:</h3>
-        <p>Did you enjoy reading?</p>
-        <button onClick={handleUpvote}>Yes</button>
-        <button onClick={handleDownvote}>No</button>
-        {error ? <p>{error}</p> : null}
-        <p>
-          This article has <b>{Math.abs(totalVotes)} </b>
-          {readerInfo}
-        </p>
+        {error ? (
+          <p>{error}</p>
+        ) : (
+          <>
+            <h3>Votes:</h3>
+            <p>Did you enjoy reading?</p>
+            <button onClick={handleUpvote}>Yes</button>
+            <button onClick={handleDownvote}>No</button>
+            <p>
+              This article has <b>{Math.abs(totalVotes)} </b>
+              {readerInfo}
+            </p>
+          </>
+        )}
       </article>
     </>
   );

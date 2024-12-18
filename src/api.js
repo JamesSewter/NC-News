@@ -29,3 +29,19 @@ export const updateArticleVotes = (article_id, newVote) => {
       return data;
     });
 };
+
+export const postComment = (article_id, author, body) => {
+  return api
+    .post(
+      `articles/${article_id}/comments`,
+      { username: author, body: body },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+    .then(({ data }) => {
+      return data.comment;
+    });
+};
