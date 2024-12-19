@@ -39,7 +39,7 @@ export const Comments = () => {
       votes: 0,
       created_at: new Date().toISOString(),
     };
-    console.log(tempComment.created_at)
+
 
     // Temporarily add the new comment
     setComments((currComments) => [tempComment, ...currComments]);
@@ -70,8 +70,7 @@ export const Comments = () => {
       });
   };
 
-  console.log(comments.map((c) => c.comment_id));
-
+ 
   return (
     <article className="comments">
       <h2>Comments</h2>
