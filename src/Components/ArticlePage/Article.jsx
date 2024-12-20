@@ -21,28 +21,38 @@ export const Article = ({ article }) => {
   const topicName = capitaliseFirstLetter(topic);
   const date = convertDate(created_at);
   const [votesAdded, setVotesAdded] = useState(0);
-  const [error, setError] = useState(null);
+  const [feedback, setFeedback] = useState(null);
+  const [upvoteClicked, setUpvoteClicked] = useState(false);
+  const [downvoteClicked, setDownvoteClicked] = useState(false);
 
   const handleUpvote = () => {
-    setVotesAdded((currVotes) => {
-      return currVotes + 1;
-    });
-    setError(null);
-    updateArticleVotes(article_id, 1).catch((err) => {
-      console.log(err)
-      setError("Your upvote was not successful. Please try again!");
-    });
+    if (!upvoteClicked) {
+      setVotesAdded((currVotes) => {
+        return currVotes + 1;
+      });
+      setUpvoteClicked(true);
+      setFeedback(null);
+      updateArticleVotes(article_id, 1).catch((err) => {
+        setFeedback("Your upvote was not successful. Please try again!");
+      });
+    } else {
+      setFeedback("You can't upvote twice here buddy!");
+    }
   };
 
   const handleDownvote = () => {
-    setVotesAdded((currVotes) => {
-      return currVotes - 1;
-    });
-    setError(null);
-    updateArticleVotes(article_id, -1).catch((err) => {
-      console.log(err)
-      setError("Your downvote was not successful. Please try again!");
-    });
+    if (!downvoteClicked) {
+      setVotesAdded((currVotes) => {
+        return currVotes - 1;
+      });
+      setDownvoteClicked(true);
+      setFeedback(null);
+      updateArticleVotes(article_id, -1).catch((err) => {
+        setFeedback("Your downvote was not successful. Please try again!");
+      });
+    } else {
+      setFeedback("You can't downvote twice here buddy!");
+    }
   };
 
   const totalVotes = votes + votesAdded;
@@ -62,20 +72,26 @@ export const Article = ({ article }) => {
       </article>
 
       <article className="votes">
-        {error ? (
-          <p>{error}</p>
-        ) : (
-          <>
-            <h3>Votes:</h3>
-            <p>Did you enjoy reading?</p>
-            <button onClick={handleUpvote}>Yes</button>
-            <button onClick={handleDownvote}>No</button>
-            <p>
-              This article has <b>{Math.abs(totalVotes)} </b>
-              {readerInfo}
-            </p>
-          </>
-        )}
+        <>
+          <h3>Votes:</h3>
+          {feedback ? (
+            <>
+              <p>{feedback}</p>
+              <p>
+                This article has <b>{Math.abs(totalVotes)}</b> {readerInfo}
+              </p>
+            </>
+          ) : (
+            <>
+              <p>Did you enjoy reading?</p>
+              <button onClick={handleUpvote}>Yes</button>
+              <button onClick={handleDownvote}>No</button>
+              <p>
+                This article has <b>{Math.abs(totalVotes)}</b> {readerInfo}
+              </p>
+            </>
+          )}
+        </>
       </article>
     </>
   );

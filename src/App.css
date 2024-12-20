@@ -14,8 +14,16 @@
 h1 {
   color: rgb(188, 183, 183);
 }
+
+h2 {
+  text-decoration: underline;
+}
 ul {
   list-style-type: none;
+}
+
+.topic-list {
+ display: flex
 }
 
 .article-list {
@@ -105,13 +113,12 @@ ul {
 }
 
 #comment-prompt {
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 
 #comment-input {
   margin: 10px;
   padding: 10px;
-
 }
 
 /* Comment Card */

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getArticlesByTopic, getArticles } from "../../api";
+import { getArticles } from "../../api";
 import { capitaliseFirstLetter } from "../../utils/utils";
 import { ArticleCard } from "./ArticleCard";
 import { Link, useSearchParams } from "react-router-dom";
@@ -7,14 +7,26 @@ import { Link, useSearchParams } from "react-router-dom";
 export const Topic = () => {
   const [topicArticle, setTopicArticle] = useState([]);
   const [userFeedback, setUserFeedback] = useState("");
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const topic = searchParams.get("topic");
+  const sortBy = searchParams.get("sort_by") || "created_at";
+  const order = searchParams.get("order") || "desc";
 
   const formattedTopic = capitaliseFirstLetter(topic);
+
+  const handleSort = (newSortBy) => {
+    setSearchParams({ topic, sort_by: newSortBy, order });
+  };
+
+  const handleOrder = (newOrder) => {
+    setSearchParams({ topic, sort_by: sortBy, order: newOrder });
+  };
+
   useEffect(() => {
     if (topic) {
       setUserFeedback(`Articles on ${formattedTopic} loading...`);
-      getArticlesByTopic(topic)
+      getArticles(topic, sortBy, order)
         .then((articleData) => {
           setTopicArticle(articleData);
           setUserFeedback("");
@@ -25,7 +37,7 @@ export const Topic = () => {
           );
         });
     }
-  }, [topic]);
+  }, [topic, sortBy, order]);
 
   return (
     <>
@@ -33,6 +45,41 @@ export const Topic = () => {
       {userFeedback ? (
         <h3>{userFeedback}</h3>
       ) : (
+        <>
+          {/* Sorting Controls */}
+          <div className="sorting-controls">
+            <button onClick={() => handleSort("created_at")}>
+              Sort by Date
+            </button>
+            <button onClick={() => handleSort("votes")}>Sort by Votes</button>
+            <button
+              onClick={() => handleOrder(order === "asc" ? "desc" : "asc")}
+            >
+              Order: {order === "asc" ? "Ascending" : "Descending"}
+            </button>
+          </div>
+
+          {/* Article List */}
+          <ul className="article-list">
+            {topicArticle.map((article) => (
+              <Link
+                to={`/article/${article.article_id}`}
+                key={article.article_id}
+              >
+                <li>
+                  <ArticleCard article={article} />
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </>
+      )}
+    </>
+  );
+};
+
+/* 
+  (
         <ul className="article-list">
           {topicArticle.map((article) => {
             return (
@@ -47,7 +94,4 @@ export const Topic = () => {
             );
           })}
         </ul>
-      )}
-    </>
-  );
-};
+      )} */

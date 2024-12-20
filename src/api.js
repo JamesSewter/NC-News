@@ -4,8 +4,11 @@ const api = axios.create({
   baseURL: "https://northcoders-news-api-7cgk.onrender.com/api",
 });
 
-export const getArticles = () => {
-  return api.get("/articles").then(({ data }) => {
+export const getArticles = (topic, sortBy, order) => {
+  return api.
+  get("/articles", {
+    params: { topic: topic, sort_by: sortBy, order: order },
+  }).then(({ data }) => {
     return data.articles;
   });
 };
@@ -55,11 +58,5 @@ export const deleteComment = (comment_id) => {
 export const getTopics = () => {
   return api.get(`/topics`).then(({ data }) => {
     return data.topics;
-  });
-};
-
-export const getArticlesByTopic = (slug) => {
-  return api.get(`/articles?topic=${slug}`).then(({ data }) => {
-    return data.articles;
   });
 };
