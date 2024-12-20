@@ -52,7 +52,6 @@ export const Article = ({ article }) => {
     <>
       <article className="article">
         <h2 className="article-title">{title}</h2>
-        {/* make topic a link when topics done*/}
         <h3 className="topic-name">Topic: {topicName}</h3>
         <img className="article-img" src={article_img_url} alt="article img" />
         <h3 className="article-author-date">
