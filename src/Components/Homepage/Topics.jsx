@@ -26,12 +26,12 @@ export const Topics = () => {
       {userFeedback ? (
         <h3>{userFeedback}</h3>
       ) : (
-        <ul>
+        <ul id="topic-list">
           {topics.map((topic) => {
             return (
               <li key={topic.slug}>
                 <Link to={`/articles?topic=${topic.slug}`}>
-                  {capitaliseFirstLetter(topic.slug)}
+                  <h2>{capitaliseFirstLetter(topic.slug)}</h2>
                 </Link>
               </li>
             );
