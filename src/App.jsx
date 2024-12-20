@@ -11,11 +11,11 @@ function App() {
   
   return (
     <>
-      <Link to="/">
+      <Link to="*"> {/* changed this from path="/" */}
         <Header />
       </Link>
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route path="*" element={<Homepage />} />
         <Route path="/article/:article_id" element={<ArticlePage />} />
       </Routes>
       <Footer />

@@ -2,9 +2,15 @@ import { useEffect, useState } from "react";
 import { getArticles } from "../../api";
 import { ArticleList } from "./ArticleList";
 
+import { Routes, Route, Link, useSearchParams } from "react-router-dom";
+import { Topics } from "./Topics";
+import { Topic } from "./Topic";
+
 export const Nav = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchParams] = useSearchParams();
+  const topic = searchParams.get("topic");
 
   useEffect(() => {
     getArticles().then((articlesData) => {
@@ -17,17 +23,17 @@ export const Nav = () => {
     return <p>Loading...</p>;
   }
 
-    return (
+  return (
     <>
+      <Topics />
+      <Routes>
+        <Route path="/articles" element={<Topic />} key={topic} />
+      </Routes>
       <h2>Articles</h2>
-      <ArticleList articles={articles} /* topic={topic} */ />
+      <ArticleList articles={articles} />
     </>
   );
 };
 
-/* IGNORE below--> */
-/* 
-  const [topics, setTopics] = useState([]); 
-  useEffect to getTopics and set
-  default to all topics 
-  SEE Stephens msg on pull request when get to topics!!!! */
+//Make into links
+//Format flex-wrap???

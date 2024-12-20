@@ -51,3 +51,15 @@ export const deleteComment = (comment_id) => {
     console.log("comment deleted");
   });
 };
+
+export const getTopics = () => {
+  return api.get(`/topics`).then(({ data }) => {
+    return data.topics;
+  });
+};
+
+export const getArticlesByTopic = (slug) => {
+  return api.get(`/articles?topic=${slug}`).then(({ data }) => {
+    return data.articles;
+  });
+};
