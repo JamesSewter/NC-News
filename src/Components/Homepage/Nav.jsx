@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { getArticles } from "../../api";
-import { Routes, Route, Link, useSearchParams } from "react-router-dom";
+import { Routes, Route, useSearchParams } from "react-router-dom";
 
 import { ArticleList } from "./ArticleList";
 import { Topics } from "./Topics";
 import { Topic } from "./Topic";
-import { Sort } from "./Sort";
 
 export const Nav = () => {
   const [articles, setArticles] = useState([]);
@@ -33,11 +32,11 @@ setError(true)
 
   return (
     <>
+    <h2>Topics</h2>
       <Topics />
       <Routes>
         <Route path="/articles" element={<Topic />} key={topic} />
       </Routes>
-      <Sort/>
       <h2>All Articles</h2>
       <ArticleList articles={articles} />
     </>

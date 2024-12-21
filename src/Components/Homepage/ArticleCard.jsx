@@ -23,10 +23,9 @@ export const ArticleCard = ({ article }) => {
       <img
         className="article-card-img"
         src={article_img_url}
-        alt="figure out how to make accessible"
+        alt={title}
       />
       <h3>
-        {" "}
         Written by <em>{author}</em> | {date}
       </h3>
       <p>Votes: {votes} </p>

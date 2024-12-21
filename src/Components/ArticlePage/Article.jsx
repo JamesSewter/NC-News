@@ -59,7 +59,7 @@ export const Article = ({ article }) => {
   const readerInfo = addVoteAdjective(totalVotes);
 
   return (
-    <>
+    <div>
       <article className="article">
         <h2 className="article-title">{title}</h2>
         <h3 className="topic-name">Topic: {topicName}</h3>
@@ -84,8 +84,10 @@ export const Article = ({ article }) => {
           ) : (
             <>
               <p>Did you enjoy reading?</p>
-              <button onClick={handleUpvote}>Yes</button>
-              <button onClick={handleDownvote}>No</button>
+              <div role="group" aria-label="Vote on this article">
+              <button onClick={handleUpvote} aria-label="Upvote this article">Yes</button>
+              <button onClick={handleDownvote} aria-label="Downvote this article">No</button>
+              </div>
               <p>
                 This article has <b>{Math.abs(totalVotes)}</b> {readerInfo}
               </p>
@@ -93,6 +95,6 @@ export const Article = ({ article }) => {
           )}
         </>
       </article>
-    </>
+    </div>
   );
 };

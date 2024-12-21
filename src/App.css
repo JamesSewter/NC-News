@@ -1,5 +1,23 @@
+@media (max-width: 300px) {
+  #root {
+    display: none;
+  }
+
+  #small-screen-warning {
+    display: block;
+  }
+}
+
+#small-screen-warning {
+  display: none;
+  text-align: center;
+  font-size: 1.2em;
+  color: red;
+  padding: 1rem;
+}
+
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -23,7 +41,7 @@ ul {
 }
 
 .topic-list {
- display: flex
+  display: flex;
 }
 
 .article-list {
@@ -46,7 +64,6 @@ ul {
   height: 250px;
 }
 
-/* Article: */
 .article-title {
   text-decoration: underline;
   padding: 20px;
@@ -92,8 +109,6 @@ ul {
   text-align: center;
 }
 
-/* Comments */
-
 .comments {
   border: 1px solid black;
   padding: 10px;
@@ -102,7 +117,7 @@ ul {
   text-align: center;
 }
 
-/* finish styling the form */
+
 .comment-form {
   border: 1px solid black;
   padding: 10px;
@@ -121,7 +136,6 @@ ul {
   padding: 10px;
 }
 
-/* Comment Card */
 
 .comment-card {
   border: 1px solid black;

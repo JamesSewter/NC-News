@@ -1,8 +1,6 @@
 import { getTopics } from "../../api";
 import { useState, useEffect } from "react";
-import { Routes, Route, Link, useParams } from "react-router-dom";
-import { Topic } from "./Topic";
-import { ArticleCard } from "./ArticleCard";
+import { Link } from "react-router-dom";
 import { capitaliseFirstLetter } from "../../utils/utils";
 
 export const Topics = () => {

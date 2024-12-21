@@ -14,7 +14,6 @@ export const CommentCard = ({ comment }) => {
     setDeleteCommentFeedback("Comment deleting taking place!");
     deleteComment(comment_id)
       .then(() => {
-        //let user know comment deleted
         setDeleteCommentFeedback("Your comment was succesfully deleted");
       })
       .catch((err) => {

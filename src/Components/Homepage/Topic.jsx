@@ -46,7 +46,6 @@ export const Topic = () => {
         <h3>{userFeedback}</h3>
       ) : (
         <>
-          {/* Sorting Controls */}
           <div className="sorting-controls">
             <button onClick={() => handleSort("created_at")}>
               Sort by Date
@@ -59,7 +58,6 @@ export const Topic = () => {
             </button>
           </div>
 
-          {/* Article List */}
           <ul className="article-list">
             {topicArticle.map((article) => (
               <Link
@@ -78,20 +76,3 @@ export const Topic = () => {
   );
 };
 
-/* 
-  (
-        <ul className="article-list">
-          {topicArticle.map((article) => {
-            return (
-              <Link
-                to={`/article/${article.article_id}`}
-                key={article.article_id}
-              >
-                <li>
-                  <ArticleCard article={article} />
-                </li>
-              </Link>
-            );
-          })}
-        </ul>
-      )} */

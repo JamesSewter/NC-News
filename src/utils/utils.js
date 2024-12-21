@@ -61,3 +61,20 @@ export const addVoteAdjective = (articleVotes) => {
     return "downvote - oh no!";
   }
 };
+
+export const formatGreeting = (timestamp) => {
+  const date = new Date(timestamp);
+  const hours = date.getHours();
+  let msg;
+
+  if (hours >= 5 && hours < 12) {
+    msg = "Good morning";
+  } else if (hours >= 12 && hours < 17) {
+    msg = "Good afternoon";
+  } else if (hours >= 17 && hours < 24) {
+    msg = "Good evening";
+  } else if (hours >= 0 && hours < 5) {
+    msg = "Time to sleep";
+  }
+  return msg;
+};

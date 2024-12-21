@@ -10,7 +10,6 @@ export const Comments = () => {
   const [newComment, setNewComment] = useState("");
   const [userCommentFeedback, setUserCommentFeedback] = useState("");
 
-  // Fetch comments on component mount
   useEffect(() => {
     getArticleComments(article_id)
       .then((commentData) => {
@@ -40,16 +39,12 @@ export const Comments = () => {
       created_at: new Date().toISOString(),
     };
 
-
-    // Temporarily add the new comment
     setComments((currComments) => [tempComment, ...currComments]);
     setUserCommentFeedback("Posting your comment...");
     setNewComment("");
 
-    // Send the new comment to the backend
     postComment(article_id, hardcodedUser, newComment)
       .then((postedComment) => {
-        // Replace the temporary comment with the saved one
         setComments((currComments) => {
           return currComments.map((comment) =>
             comment.comment_id === tempComment.comment_id
@@ -70,7 +65,6 @@ export const Comments = () => {
       });
   };
 
- 
   return (
     <article className="comments">
       <h2>Comments</h2>
