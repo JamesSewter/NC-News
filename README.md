@@ -22,21 +22,21 @@ This news website project demonstrates my ability to develop a React-based front
 ## Instructions to clone the repo on your own machine:
 ### Please follow these steps: 
 
-### 1) Please ensure that you have Node.js
+#### 1) Please ensure that you have Node.js
 
 You can do this here: <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm" target="_blank">Node.js.</a> Note you will need at least Node v22.8.0.
  
-### 2) Clone this repo locally and install dependencies.
+#### 2) Clone this repo locally and install dependencies.
 Clone this repository locally by running `git clone <repo_url>`. Then, run `npm install` to install the following dependencies:
 
 Axios: For making HTTP requests.
 React & React DOM: Core React libraries.
 React Router DOM: For handling routing.
 
-### 3) Setting up 
+#### 3) Setting up 
 To view the project as a developer, run `npm run dev`.  to start the development server. 
 
-### 4) Back-end
+#### 4) Back-end
 This front-end application works in conjunction with a back-end API. You can explore the back-end repository here: https://github.com/JamesSewter/Northcoders-News-API)  
 
 --- 
