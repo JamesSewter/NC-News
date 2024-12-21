@@ -1,6 +1,11 @@
 # NC-News
 
-You can find the live version of my news website here: https://nc-news-js.netlify.app/
+You can find the live version of my news website here: <a href="https://nc-news-js.netlify.app/" target="_blank">NC-News</a>
+
+
+Note after clicking the link you have assumed the identity of a character called "jessjelly"!
+
+Feel free to vote on articles and comment your (jessjelly's) thoughts on articles below in the comments section!
 
 ## Description
 This news website project demonstrates my ability to develop a React-based front-end application. Key features include:
@@ -17,8 +22,9 @@ This news website project demonstrates my ability to develop a React-based front
 ## Instructions to clone the repo on your own machine:
 ### Please follow these steps: 
 
-### 1) Please ensure that you have Node.js
-You can do this here: [Node.js](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) Note you will need at least Node v22.8.0.
+### 1) Please ensure that you have Node.js#
+
+You can do this here: <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm" target="_blank">Node.js.</a> Note you will need at least Node v22.8.0.
  
 ### 2) Clone this repo locally and install dependencies.
 Clone this repository locally by running `git clone <repo_url>`. Then, run `npm install` to install the following dependencies:
@@ -35,5 +41,7 @@ This front-end application works in conjunction with a back-end API. You can exp
 
 --- 
 ## Feedback
-Please feel free to give feedback via LinkedIn [here](https://www.linkedin.com/in/james-sewter/).
-This portfolio project was created as part of a Digital Skills Bootcamp in Software Engineering provided by [Northcoders](https://northcoders.com/)
+
+Please feel free to give feedback via LinkedIn <a href="https://www.linkedin.com/in/james-sewter/" target="_blank">here</a>.
+This portfolio project was created as part of a Digital Skills Bootcamp in Software Engineering provided by
+<a href="https://northcoders.com/" target="_blank">NOrthcoders</a>.
