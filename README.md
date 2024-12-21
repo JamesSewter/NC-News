@@ -17,7 +17,7 @@ This news website project demonstrates my ability to develop a React-based front
 - Error handling and laoding states to provide user feedback.
 - User experience and accessibility considerations, including using Wave for accessibility checks.
 - Responsive design with a focus on clarity and usability.
-- The project is deployed live for access athttps://nc-news-js.netlify.app/
+- The project is deployed live for access at: <a href="https://nc-news-js.netlify.app/" target="_blank">NC-News</a>
 
 ## Instructions to clone the repo on your own machine:
 ### Please follow these steps: 
