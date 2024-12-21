@@ -2,7 +2,6 @@
 
 You can find the live version of my news website here: <a href="https://nc-news-js.netlify.app/" target="_blank">NC-News</a>
 
-
 Note after clicking the link you have assumed the identity of a character called "jessjelly"!
 
 Feel free to vote on articles and comment your (jessjelly's) thoughts on articles below in the comments section!
@@ -14,7 +13,7 @@ This news website project demonstrates my ability to develop a React-based front
 - Routing with react-router-dom for navigation.
 - Side effect management using useEffect and handling search functionality with useSearchParams.
 - API integration to fetch data and hydrate components dynamically.
-- Error handling and laoding states to provide user feedback.
+- Error handling and loading states to provide user feedback.
 - User experience and accessibility considerations, including using Wave for accessibility checks.
 - Responsive design with a focus on clarity and usability.
 - The project is deployed live for access at: <a href="https://nc-news-js.netlify.app/" target="_blank">NC-News</a>
