@@ -22,7 +22,7 @@ This news website project demonstrates my ability to develop a React-based front
 ## Instructions to clone the repo on your own machine:
 ### Please follow these steps: 
 
-### 1) Please ensure that you have Node.js#
+### 1) Please ensure that you have Node.js
 
 You can do this here: <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm" target="_blank">Node.js.</a> Note you will need at least Node v22.8.0.
  
