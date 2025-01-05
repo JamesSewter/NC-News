@@ -37,7 +37,6 @@ setError(true)
       <Routes>
         <Route path="/articles" element={<Topic />} key={topic} />
       </Routes>
-      <h2>All Articles</h2>
       <ArticleList articles={articles} />
     </>
   );

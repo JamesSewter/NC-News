@@ -1,112 +1,177 @@
-@media (max-width: 300px) {
-  #root {
-    display: none;
-  }
-
-  #small-screen-warning {
-    display: block;
-  }
-}
-
-#small-screen-warning {
-  display: none;
-  text-align: center;
-  font-size: 1.2em;
-  color: red;
-  padding: 1rem;
-}
-
-#root {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-* {
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+#small-screen-warning {
+  display: none;
+  text-align: center;
+  font-size: 1rem;
+  color: red;
+  padding: 1rem;
+}
+
 h1 {
   color: rgb(188, 183, 183);
+  font-size: 5rem;
+  padding: 0.25rem;
+  margin: 0.2rem;
+}
+
+#header {
+  background: rgba(90, 124, 65, 0.8);
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-radius: 8px;
+}
+
+#greeting {
+  color: rgb(190, 182, 182);
+  font-size: 1.2rem;
+  text-decoration: none;
 }
 
 h2 {
   text-decoration: underline;
+  font-size: 1.5rem;
 }
+
 ul {
   list-style-type: none;
 }
 
-.topic-list {
+#topic-list {
   display: flex;
-}
-
-.article-list {
-  display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.article-card {
-  padding: 20px;
-  margin: 5px;
-  border: 1px solid rgb(102, 189, 39);
-  width: 500px;
-  height: 500px;
+  gap: 1rem;
   justify-content: center;
 }
 
-.article-card-img {
-  height: 250px;
-}
-
-.article-title {
-  text-decoration: underline;
-  padding: 20px;
-}
-
-.topic-name {
-  text-decoration: underline;
-  padding: 20px;
-}
-
-.article-img {
-  height: 400px;
-  width: 600px;
-}
-
-.article-author-date {
-  padding: 20px;
-  margin: 30px;
-}
-
-.repeated-article-title {
-  text-decoration: underline;
-  font-size: 1.5em;
-  padding: 20px;
-  border: 3px solid black;
-  margin: 30px;
-}
-.article-body {
-  font-size: 1.5em;
-  border: 2px solid black;
-  padding: 50px;
-  width: 95%;
-  margin: 10px auto;
-  text-align: justify;
-}
-
-.votes {
-  font-size: 1.5em;
+#article-section {
   border: 1px solid black;
   padding: 10px;
   width: 95%;
   margin: 10px auto;
   text-align: center;
+}
+
+#article-topic {
+  border: 1px solid black;
+  padding: 10px;
+  width: 95%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.article-list {
+  border: 1px solid black;
+  padding: 10px;
+  width: 95%;
+  margin: 10px auto;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.article-card {
+  padding: 1rem;
+  margin: 0.5rem;
+  border: 1px solid rgb(102, 189, 39);
+  flex: 1 1 calc(100% - 2rem);
+  max-width: 400px;
+  height: auto;
+  justify-content: center;
+}
+
+#article-title-home {
+  color: whitesmoke;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+#article-card-data {
+  color: rgb(190, 182, 182);
+  text-decoration: none;
+}
+
+.article-card-img {
+  width: 100%;
+  height: auto;
+}
+
+.article {
+  border: 1px solid black;
+  padding: 10px;
+  width: 95%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.topic-name {
+  text-decoration: none;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.article-title {
+  font-size: 2rem;
+  text-decoration: underline;
+  padding: 0.5rem;
+}
+
+.repeated-article-title {
+  text-decoration: underline;
+  padding: 0.5rem;
+}
+
+.article-img {
+  width: 50%;
+  height: auto;
+}
+
+.article-author-date {
+  color: rgb(190, 182, 182);
+  text-decoration: none;
+}
+
+.article-body {
+  font-size: 1rem;
+  border: 1px solid black;
+  padding: 1rem;
+  width: 95%;
+  margin: 1rem auto;
+  text-align: justify;
+}
+
+.votes {
+  font-size: 1.3rem;
+  border: 1px solid black;
+  padding: 10px;
+  width: 95%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+#comment-title {
+  text-decoration: none;
 }
 
 .comments {
@@ -116,7 +181,6 @@ ul {
   margin: 10px auto;
   text-align: center;
 }
-
 
 .comment-form {
   border: 1px solid black;
@@ -136,7 +200,6 @@ ul {
   padding: 10px;
 }
 
-
 .comment-card {
   border: 1px solid black;
   padding: 30px;
@@ -152,4 +215,36 @@ ul {
 #comment-button {
   padding: 15px;
   margin: 15px;
+}
+
+@media (min-width: 481px) {
+  .article-card {
+    flex: 1 1 calc(50% - 2rem);
+    max-width: 300px;
+  }
+
+  .article-body {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .article-card {
+    flex: 1 1 calc(33.33% - 2rem);
+    max-width: 250px;
+  }
+
+  .article-body {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 300px) {
+  #root {
+    display: none;
+  }
+
+  #small-screen-warning {
+    display: block;
+  }
 }

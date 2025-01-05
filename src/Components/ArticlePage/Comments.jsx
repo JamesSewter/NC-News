@@ -67,7 +67,7 @@ export const Comments = () => {
 
   return (
     <article className="comments">
-      <h2>Comments</h2>
+      <h2 id="comment-title">Comments:</h2>
       <p>{comments.length} readers have commented about this article</p>
       <form className="comment-form"onSubmit={handleAddComment}>
         <label id="comment-prompt" htmlFor="comment-input">

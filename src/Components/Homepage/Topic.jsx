@@ -40,7 +40,7 @@ export const Topic = () => {
   }, [topic, sortBy, order]);
 
   return (
-    <>
+    <article id="article-topic">
       <h2>Articles on {formattedTopic}</h2>
       {userFeedback ? (
         <h3>{userFeedback}</h3>
@@ -72,7 +72,7 @@ export const Topic = () => {
           </ul>
         </>
       )}
-    </>
+    </article>
   );
 };
 

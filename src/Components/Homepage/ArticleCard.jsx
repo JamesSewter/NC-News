@@ -16,22 +16,18 @@ export const ArticleCard = ({ article }) => {
 
   return (
     <article className="article-card">
-      <h2>{title}</h2>
+      <h2 id="article-title-home">{title}</h2>
       <h3>
         Topic: <b>{topicName}</b>
       </h3>
-      <img
-        className="article-card-img"
-        src={article_img_url}
-        alt={title}
-      />
-      <h3>
-        Written by <em>{author}</em> | {date}
-      </h3>
-      <p>Votes: {votes} </p>
-      <p>Comments: {comment_count}</p>
+      <img className="article-card-img" src={article_img_url} alt={title} />
+      <article id="article-card-data">
+        <h3>
+          Written by <em>{author}</em> | {date}
+        </h3>
+        <p>Votes: {votes} </p>
+        <p>Comments: {comment_count}</p>
+      </article>
     </article>
   );
 };
-
-

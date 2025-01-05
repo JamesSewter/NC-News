@@ -1,11 +1,6 @@
-export const Footer = () => {
+import { scrollToTop } from "../utils/utils";
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top:0,
-      behavior: "smooth"
-    })
-  }
+export const Footer = () => {
   return (
     <>
       <button onClick={scrollToTop}>To top</button>
